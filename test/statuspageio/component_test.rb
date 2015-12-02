@@ -2,7 +2,9 @@ require 'test_helper'
 
 describe 'Statuspageio::Component' do
   before do
-    AuthExample.new
+    VCR.use_cassette('component/setup') do
+      AuthExample.new
+    end
   end
   ##
   # List Components

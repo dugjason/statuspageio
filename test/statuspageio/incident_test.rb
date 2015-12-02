@@ -2,7 +2,9 @@ require 'test_helper'
 
 describe 'Statuspageio::Incident' do
   before do
-    AuthExample.new
+    VCR.use_cassette('incident/setup') do
+      AuthExample.new
+    end
   end
   ##
   # List Incidents

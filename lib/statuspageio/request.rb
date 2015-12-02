@@ -30,7 +30,7 @@ module Statuspageio
       elsif !Statuspageio.api_key.nil?
         auth_details = Statuspageio.api_key
       else
-        raise StandardError #TODO build proper error classes
+        auth_details = nil
       end
 
       headers = {}
